@@ -22,9 +22,9 @@ namespace WebCrudAdvanced.Repositories.ROrder
         {
             try
             {
-                using (var dbConnection = new SqlConnection(_connectionString))  // Usando uma nova conexão para cada operação
+                using (var dbConnection = new SqlConnection(_connectionString)) 
                 {
-                    await dbConnection.OpenAsync();  // Abrir a conexão
+                    await dbConnection.OpenAsync(); 
                     var query = @"
                     INSERT INTO [DBCrudAdv].[dbo].[Order] ([ProductId], [Quantity], [RegisterDate], [UserId])
                     VALUES (@ProductId, @Quantity, @RegisterDate, @UserId)
@@ -34,7 +34,6 @@ namespace WebCrudAdvanced.Repositories.ROrder
             }
             catch (Exception ex)
             {
-                // Log any exceptions for debugging
                 Console.WriteLine($"Error inserting order: {ex.Message}");
             }
         }

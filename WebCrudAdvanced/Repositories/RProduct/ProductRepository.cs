@@ -42,16 +42,16 @@ namespace WebCrudAdvanced.Repositories.RProduct
 
         public async Task<IEnumerable<Product>> GetAllProducts()
         {
-            var query = "SELECT * FROM Product";  // Consulta SQL simples para pegar todos os produtos
-            var products = await _dbConnection.QueryAsync<Product>(query);  // Usando Dapper para executar a consulta
-            return products;  // Retorna a lista de produtos
+            var query = "SELECT * FROM Product";  
+            var products = await _dbConnection.QueryAsync<Product>(query); 
+            return products;  
         }
 
         public async Task<Product> GetProductById(int productId)
         {
-            var query = "SELECT * FROM Product WHERE Id = @Id";  // Consulta SQL para pegar um produto por ID
-            var product = await _dbConnection.QueryFirstOrDefaultAsync<Product>(query, new { Id = productId });  // Dapper executa a consulta
-            return product;  // Retorna o produto encontrado ou null caso não encontre
+            var query = "SELECT * FROM Product WHERE Id = @Id"; 
+            var product = await _dbConnection.QueryFirstOrDefaultAsync<Product>(query, new { Id = productId }); 
+            return product;  
         }
     }
 }

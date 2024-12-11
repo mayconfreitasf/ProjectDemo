@@ -23,20 +23,20 @@ namespace WebCrudAdvanced.Repositories.RUser
 
         public async Task<int> CreateUser(User user)
         {
-            // Defina sua consulta SQL para inserir um novo usuário
+            
             var query = @"
                 INSERT INTO [DBCrudAdv].[dbo].[User] (Username, PasswordHash) 
                 VALUES (@Username, @PasswordHash);
-                SELECT CAST(SCOPE_IDENTITY() AS INT);"; // Retorna o ID do usuário inserido
+                SELECT CAST(SCOPE_IDENTITY() AS INT);"; 
 
-            // Execute a consulta com os parâmetros do usuário e retorne o ID do usuário inserido
+            
             var userId = await _dbConnection.QuerySingleOrDefaultAsync<int>(query, new
             {
                 user.Username,
                 user.PasswordHash
             });
 
-            return userId; // Retorna o ID do usuário inserido
+            return userId; 
         }
     }
 }

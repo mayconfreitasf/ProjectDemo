@@ -50,38 +50,13 @@ namespace WebCrudAdvanced.Services.SUser
                 token = tokenJwt,
                 user = userDb
             };
-            //var jsonResponse = Results.Json(response);//JsonSerializer.Serialize(response);//Results.Json(response);
             var jsonResponse = Results.Ok(response);
             return jsonResponse;
-            //return response; 
         }
 
         public async Task<User> GetUserByUsername(string username)
         {
             return await _userRepository.GetUserByUsername(username);
         }
-
-        //private string GenerateJwtToken(User user)
-        //{
-        //    var claims = new[]
-        //    {
-        //        new Claim(ClaimTypes.Name, user.Username), 
-        //        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()), 
-        //    };
-
-        //    // Segredo da chave (deve ser mantido em segurança, nunca hardcoded em código fonte)
-        //    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your-secret-key-here"));
-        //    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-        //    var token = new JwtSecurityToken(
-        //        issuer: "your-app-name", // Nome da sua aplicação ou domínio
-        //        audience: "your-app-name", // O público para o qual o token é válido
-        //        claims: claims,
-        //        expires: DateTime.Now.AddHours(1), // Tempo de expiração do token
-        //        signingCredentials: creds
-        //    );
-
-        //    return new JwtSecurityTokenHandler().WriteToken(token);
-        //}
     }
 }
