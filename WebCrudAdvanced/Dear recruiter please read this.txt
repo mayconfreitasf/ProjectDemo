@@ -1,0 +1,19 @@
+/***************************
+ * Dear recruiter not all the resources were necessary to solve the problems. 
+ * However, I developed this project specifically for the selection process, 
+ * so I focused my efforts on demonstrating the manipulation of patterns and advanced features, 
+ * rather than building multiple screens that would be limited to CRUD operations.
+ * 
+ * 
+ * Simple demonstration project applying the following concepts, design patterns, and tools.
+        SOLID
+        Repository
+        Singleton
+        Dependency Injection
+        Multithreading / Task Parallel
+        Semaphore
+        Garbage Collection - manual manipulation
+        Minimal API
+        Authentication JWT
+        Frontend React
+****************************/
